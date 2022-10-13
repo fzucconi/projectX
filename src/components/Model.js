@@ -16,22 +16,19 @@ export function Model(props) {
     }
   }, [meshRef.current, props.gui]);
   const scroll = useScroll();
-  console.log(scroll);
+
 
   useFrame(({ clock, camera }) => {
     //scroll Range
-    const r1 = scroll.range(0 / 3, 3/ 3);
-    //const r3 = scroll.range(2 / 3, 3 / 3);
-    console.log(r1);
+    const r1 = scroll.range(0 / 2, 2/ 2);
+  
+
     //ScrollBased Animations
     meshRef.current.rotation.x = r1 * Math.PI * 2;
-    //meshRef.current.rotation.x = r2 * Math.PI * 2;
-    //meshRef.current.rotation.x = r3 * Math.PI * 2;
-   /*  camera.position.y =   r1 * 10;
-    camera.position.y =   r2 * 10; */
-    
-    /* camera.updateProjectionMatrix();
-    meshRef.current.rotation.z = clock.getElapsedTime() * 0.1; */
+
+    camera.position.y =   -r1 * 10;
+camera.updateProjectionMatrix();
+    meshRef.current.rotation.z = clock.getElapsedTime() * 0.1;
   });
   return (
     <group position={[0, -3, -10]} ref={meshRef} {...props} dispose={null}>
