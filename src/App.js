@@ -6,13 +6,12 @@ import { PerspectiveCamera, ScrollControls } from "@react-three/drei";
 import { useRef } from "react";
 import Controller from "./components/Controller";
 import { Model } from "./components/Model";
+import { Astronaut } from "./components/Astronaut";
 import Section from "./components/Section";
-
 
 function App() {
   const gui = new GUI();
- 
-  
+
   const cameraRef = new useRef(null);
 
   console.log(gui);
@@ -27,15 +26,12 @@ function App() {
             <ambientLight />
             <directionalLight position={[1, 1, 1]} />
             <SpaceDust count={5000} />
-            {gui &&  <Model  gui={gui} />}
+            {gui && <Model gui={gui} />}
+            <Astronaut />
             <Section text="prova" />
           </ScrollControls>
-         
-          
         </Canvas>
       </div>
-      
-     
     </div>
   );
 }
