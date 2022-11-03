@@ -7,10 +7,10 @@ import { useRef } from "react";
 import Controller from "./components/Controller";
 import { Model2 } from "./components/Model2";
 import Section from "./components/Section";
+import Picture from "./components/Picture";
 
 function App() {
   const gui = new GUI();
-
   const cameraRef = new useRef(null);
 
   return (
@@ -25,6 +25,7 @@ function App() {
             <SpaceDust count={10000} />
             {gui && <Model2 gui={gui} />}
             <Section text="prova" />
+            <Picture position={[0, -0.5, 14]} />
           </ScrollControls>
         </Canvas>
       </div>

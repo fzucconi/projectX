@@ -1,14 +1,10 @@
 import React from "react";
 
-const Link = ({ className, href, children }) => {
-  const onClick = (event) => {
-    event.preventDefault();
-  };
-
+const Link = ({ href, children }) => {
   return (
-    <a onClick={onClick} className={className} href={href}>
-      {children}
-    </a>
+    <div>
+      <a href={href}>{children}</a>
+    </div>
   );
 };
 export default Link;

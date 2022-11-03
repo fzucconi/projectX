@@ -2,7 +2,7 @@ import React from "react";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 
-function Controller() {
+function Controller(props) {
   //Scene Position
   const scenePos = useRef({});
 
@@ -21,7 +21,7 @@ function Controller() {
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
     };
-  }, []);
+  }, [props.gui]);
 
   useFrame(({ scene }) => {
     //Scene Animation

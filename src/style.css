@@ -57,3 +57,26 @@ section:nth-child(2) {
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
+.link{
+  opacity: 1;
+}
+
+.link > * {
+  transition: transform 0.5s cubic-bezier(0.61, 1, 0.88, 1);
+}
+
+.link.hide{
+  transition:visibility 0s, opacity 0.5s cubic-bezier(0.61, 1, 0.88, 1);
+  visibility: hidden;
+  opacity: 0;
+
+}
+.arrow{
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  margin: 3rem;
+  padding: 1rem;
+}
+
+
