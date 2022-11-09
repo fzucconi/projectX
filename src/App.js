@@ -2,12 +2,17 @@ import "./style.css";
 import { Canvas } from "@react-three/fiber";
 import { SpaceDust } from "./components/SpaceDust";
 import GUI from "lil-gui";
-import { PerspectiveCamera, ScrollControls } from "@react-three/drei";
+import {
+  OrbitControls,
+  PerspectiveCamera,
+  ScrollControls,
+} from "@react-three/drei";
 import { useRef } from "react";
 import Controller from "./components/Controller";
 import { Model2 } from "./components/Model2";
 import Section from "./components/Section";
 import Picture from "./components/Picture";
+import Galaxy from "./components/Galaxy";
 
 function App() {
   const gui = new GUI();
@@ -25,7 +30,8 @@ function App() {
             <SpaceDust count={10000} />
             {gui && <Model2 gui={gui} />}
             <Section text="prova" />
-            <Picture position={[0, -0.5, 14]} />
+            <Picture url={["/texture1.jpg"]} position={[-16, -0.5, 45]} />
+            <Galaxy />
           </ScrollControls>
         </Canvas>
       </div>

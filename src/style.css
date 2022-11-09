@@ -62,11 +62,11 @@ section:nth-child(2) {
 }
 
 .link > * {
-  transition: transform 0.5s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: all 0.5s cubic-bezier(0.61, 1, 0.88, 1);
 }
 
 .link.hide{
-  transition:visibility 0s, opacity 0.5s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: all 0.5s, opacity 0.5s cubic-bezier(0.61, 1, 0.88, 1);
   visibility: hidden;
   opacity: 0;
 

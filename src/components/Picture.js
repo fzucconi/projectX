@@ -9,15 +9,16 @@ const Picture = (props) => {
   const [textureUrl, setTextureUrl] = useState(
     "https://b3d.interplanety.org/wp-content/upload_content/2016/08/01-3.jpg"
   );
+
   const pic = useRef(null);
-  //const [texture, setTexture] = useState(0);
+
   useEffect(() => {
     const search = async () => {
       const { data } = await axios.get(
-        "https://imsea.herokuapp.com/api/1?q=nasaEPIC"
+        "https://imsea.herokuapp.com/api/1?q=nasaAPOD"
       );
       if (data.results && data.results.length > 0) {
-        setTextureUrl(data.results[5]);
+        setTextureUrl(data.results[+2]);
         console.log(textureUrl + " nuovo");
       }
     };

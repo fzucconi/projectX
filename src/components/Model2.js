@@ -27,6 +27,7 @@ export function Model2(props) {
         .name("y-rotation");
       props.gui.add(group.current.position, "z", -10, 10, 0.01);
       actions[animations[3].name].reset().play();
+      console.log(actions);
     }
   }, [props.gui, actions, animations]);
 

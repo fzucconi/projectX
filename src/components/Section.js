@@ -12,7 +12,8 @@ function Section(props) {
   const view2 = useRef(null);
   const view3 = useRef(null);
   const view4 = useRef(null);
-  const scene = useThree((state) => state.scene);
+
+  const { camera, scene } = useThree();
   useEffect(() => {
     if (view1.current && view2.current) {
     }
@@ -24,7 +25,7 @@ function Section(props) {
     gsap.to(scene.position, {
       duration: 1.5,
       ease: "power2.inOut",
-      z: -15,
+      z: -50,
     });
     view1.current.classList.toggle("hide");
     view2.current.classList.toggle("hide");
@@ -54,6 +55,23 @@ function Section(props) {
     view4.current.classList.toggle("hide");
   };
 
+  const galaxy = (event) => {
+    event.preventDefault();
+    console.log(camera.position);
+    gsap.to(scene.position, {
+      duration: 1.5,
+      ease: "power2.inOut",
+      y: 20,
+    });
+    view1.current.classList.toggle("hide");
+    view2.current.classList.toggle("hide");
+    view3.current.classList.toggle("hide");
+    view4.current.classList.toggle("hide");
+    //gsap.to(".webgl div", {
+    //overflow: "hidden",
+    // });
+  };
+
   const back = (event) => {
     event.preventDefault();
     console.log(scene.position);
@@ -61,6 +79,7 @@ function Section(props) {
       duration: 1.5,
       ease: "power2.inOut",
       z: 0,
+      y: 0,
     });
     gsap.to(scene.scale, {
       duration: 1.5,
@@ -124,7 +143,7 @@ function Section(props) {
         </div>
       </section>
       <section className="section">
-        <div className="link" ref={view4}>
+        <div className="link" onClick={galaxy} ref={view4}>
           <h1>
             <Link
               //href="/src/App.js"
