@@ -12,7 +12,6 @@ function Section(props) {
   const view2 = useRef(null);
   const view3 = useRef(null);
   const view4 = useRef(null);
-
   const { camera, scene } = useThree();
   useEffect(() => {
     if (view1.current && view2.current) {
@@ -104,7 +103,7 @@ function Section(props) {
   useFrame(() => {
     if (top.current) {
       const show1 = scroll.visible(0 / 2, 0.05 / 2);
-      const show2 = scroll.visible(1 / 2, 0.25 / 2);
+      const show2 = scroll.visible(1 / 2.2, 0.25 / 2);
       const show3 = scroll.visible(1.9 / 2, 0.25 / 2);
 
       top.current.classList.toggle("show", show1);
@@ -121,11 +120,11 @@ function Section(props) {
             <Link
               scene={scene}
               //href="/src/App.js"
-              children="Link1"
+              children="APOD"
             />
           </h1>
           <p className="subText" ref={top} style={{ fontSize: 20 }}>
-            lorem ipsum blablabla
+            Visit the NASA Astronomy Picture Of The Day planet
           </p>
         </div>
       </section>
@@ -134,11 +133,11 @@ function Section(props) {
           <h1>
             <Link
               //href="/src/App.js"
-              children="Link2"
+              children="Black hole"
             />
           </h1>
           <p className="subText" ref={middle} style={{ fontSize: 20 }}>
-            lorem ipsum blablabla
+            Simulate a Black Hole
           </p>
         </div>
       </section>
@@ -147,11 +146,11 @@ function Section(props) {
           <h1>
             <Link
               //href="/src/App.js"
-              children="Link3"
+              children="Galaxy"
             />
           </h1>
           <p className="subText" ref={bottom} style={{ fontSize: 20 }}>
-            lorem ipsum blablablaa
+            Visit my Galaxy shader
           </p>
         </div>
       </section>

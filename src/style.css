@@ -21,7 +21,6 @@
   width: 100vw;
   font-family: "Cabin", sans-serif;
   color: #ffeded;
-  text-transform: uppercase;
   font-size: 7vmin;
   padding-left: 10%;
   padding-right: 10%;
@@ -41,11 +40,13 @@ section:nth-child(2) {
 .subText{
   transition: opacity 0.5s cubic-bezier(0.61, 1, 0.88, 1);
   opacity: 0;
+  
 }
 
 
 .subText.show {
   opacity: 1;
+  
 }
 
 
@@ -53,20 +54,28 @@ section:nth-child(2) {
   transition: transform 0.5s cubic-bezier(0.61, 1, 0.88, 1);
 }
 
-.subText.show > * {
+/* .subText.show > * {
   transform: matrix(1, 0, 0, 1, 0, 0);
-}
+} */
 
 .link{
+  transition: all 1.5s cubic-bezier(0.61, 1, 0.88, 1);
   opacity: 1;
+  text-align: center;
+  width: 50%;
+}
+.link h1{
+  text-transform: uppercase;
 }
 
-.link > * {
-  transition: all 0.5s cubic-bezier(0.61, 1, 0.88, 1);
+.link:hover{
+  cursor: pointer;
 }
+
+
 
 .link.hide{
-  transition: all 0.5s, opacity 0.5s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: all 1.0s cubic-bezier(0.61, 1, 0.88, 1);
   visibility: hidden;
   opacity: 0;
 

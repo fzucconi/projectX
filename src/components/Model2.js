@@ -6,7 +6,7 @@ import React, { useRef, useEffect } from "react";
 import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-export function Model2(props) {
+const Model2 = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/model2.glb");
   const { actions } = useAnimations(animations, group);
@@ -27,7 +27,6 @@ export function Model2(props) {
         .name("y-rotation");
       props.gui.add(group.current.position, "z", -10, 10, 0.01);
       actions[animations[3].name].reset().play();
-      console.log(actions);
     }
   }, [props.gui, actions, animations]);
 
@@ -73,6 +72,8 @@ export function Model2(props) {
       </group>
     </group>
   );
-}
+};
 
 useGLTF.preload("/model2.glb");
+
+export default Model2;

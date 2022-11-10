@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Color, AdditiveBlending } from "three";
+import { AdditiveBlending } from "three";
 import * as THREE from "three";
 import { shaderMaterial } from "@react-three/drei";
 import glsl from "babel-plugin-glsl/macro";
@@ -21,7 +21,7 @@ const Galaxy = (props) => {
       "color",
       new THREE.BufferAttribute(colors, 3)
     );
-  }, [geometry]);
+  });
   /**
    * Galaxy
    */
@@ -104,10 +104,10 @@ const Galaxy = (props) => {
       <points>
         <bufferGeometry ref={geometry}>
           <bufferAttribute
-            attach="attributes-position" //attribute parameter yang akan dikontrol
+            attach="attributes-position"
             array={positions}
-            count={positions.length / 3} //
-            itemSize={3} //dikeranakan telah diketahui bahwa tiap arraytype axis akan berisi 3 value pada 1d array
+            count={positions.length / 3}
+            itemSize={3}
           />
         </bufferGeometry>
         <galaxyMaterial

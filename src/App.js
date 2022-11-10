@@ -2,14 +2,10 @@ import "./style.css";
 import { Canvas } from "@react-three/fiber";
 import { SpaceDust } from "./components/SpaceDust";
 import GUI from "lil-gui";
-import {
-  OrbitControls,
-  PerspectiveCamera,
-  ScrollControls,
-} from "@react-three/drei";
+import { PerspectiveCamera, ScrollControls } from "@react-three/drei";
 import { useRef } from "react";
 import Controller from "./components/Controller";
-import { Model2 } from "./components/Model2";
+import Model2 from "./components/Model2";
 import Section from "./components/Section";
 import Picture from "./components/Picture";
 import Galaxy from "./components/Galaxy";
@@ -17,6 +13,7 @@ import Galaxy from "./components/Galaxy";
 function App() {
   const gui = new GUI();
   const cameraRef = new useRef(null);
+  // const modelRef = new useRef(null);
 
   return (
     <div className="App">
