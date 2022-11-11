@@ -27,7 +27,7 @@
   z-index: 100;
 } 
 
-section:nth-child(2) {
+section:nth-child(even) {
   justify-content: flex-end;
 }
 
