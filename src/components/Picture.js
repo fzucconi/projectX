@@ -6,9 +6,7 @@ import axios from "axios";
 const Picture = (props) => {
   //var today = new Date().toISOString().slice(0, 10);
   // const [date, setDate] = useState(today);
-  const [textureUrl, setTextureUrl] = useState(
-    "https://b3d.interplanety.org/wp-content/upload_content/2016/08/01-3.jpg"
-  );
+  const [textureUrl, setTextureUrl] = useState("/texure1.jpg");
 
   const pic = useRef(null);
 
