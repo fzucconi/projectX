@@ -14,19 +14,20 @@
 }
 
  .section {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   height: 100vh;
+  width: 100vw;
   font-family: "Cabin", sans-serif;
   color: #ffeded;
-  text-transform: uppercase;
   font-size: 7vmin;
   padding-left: 10%;
   padding-right: 10%;
   z-index: 100;
 } 
 
-section:nth-child(odd) {
+section:nth-child(even) {
   justify-content: flex-end;
 }
 
@@ -35,3 +36,56 @@ section:nth-child(odd) {
   height: 100vh;
   width: 100vw;
 }
+
+.subText{
+  transition: opacity 0.5s cubic-bezier(0.61, 1, 0.88, 1);
+  opacity: 0;
+  
+}
+
+
+.subText.show {
+  opacity: 1;
+  
+}
+
+
+.subText > * {
+  transition: transform 0.5s cubic-bezier(0.61, 1, 0.88, 1);
+}
+
+/* .subText.show > * {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+} */
+
+.link{
+  transition: all 1.5s cubic-bezier(0.61, 1, 0.88, 1);
+  opacity: 1;
+  text-align: center;
+  width: 50%;
+}
+.link h1{
+  text-transform: uppercase;
+}
+
+.link:hover{
+  cursor: pointer;
+}
+
+
+
+.link.hide{
+  transition: all 1.0s cubic-bezier(0.61, 1, 0.88, 1);
+  visibility: hidden;
+  opacity: 0;
+
+}
+.arrow{
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  margin: 3rem;
+  padding: 1rem;
+}
+
+
