@@ -30,13 +30,19 @@ const Model2 = (props) => {
     }
   }, [props.gui, actions, animations]);
 
+  useEffect(() => {
+    if (group && group.current) {
+      props.setRef(group.current);
+    }
+  }, [group, group.current]);
+
   const scroll = useScroll();
 
   useFrame(({ clock, camera }) => {
     //scroll Range
 
-    const r1 = scroll.curve(0 / 2, 2 / 2);
-    const cameraRange = scroll.range(0 / 3, 3 / 3);
+    const r1 = scroll.curve(0 / 1, 1 / 1);
+    const cameraRange = scroll.range(0 / 1, 1 / 1);
 
     //ScrollBased Animations
     group.current.position.x = -2 * r1;
