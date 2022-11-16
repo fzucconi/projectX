@@ -83,7 +83,7 @@ section:nth-child(even) {
 .arrow{
   position:fixed;
   left: 0;
-  bottom: 0;
+  bottom: 0vh;
   margin: 3rem;
   padding: 1rem;
 }

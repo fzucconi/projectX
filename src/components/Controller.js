@@ -25,7 +25,8 @@ function Controller(props) {
 
   useFrame(({ scene }) => {
     //Scene Animation
-    scene.rotation.y = -scenePos.current.x;
+    scene.rotation.y = -scenePos.current?.x || 0;
+    //scene.rotation.y = -scenePos.current.x;
   });
 
   return <></>;
