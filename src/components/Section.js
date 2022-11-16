@@ -18,7 +18,6 @@ function Section(props) {
   useEffect(() => {
     if (view1.current && view2.current) {
     }
-    console.log(props.model);
   }, [top, middle, bottom, view1, view2]);
 
   const onClick = (event) => {
