@@ -30,11 +30,11 @@ const Model2 = (props) => {
     }
   }, [props.gui, actions, animations]);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if (group && group.current) {
       props.setRef(group.current);
     }
-  }, [group, group.current]);
+  }, [group, group.current]); */
 
   const scroll = useScroll();
 
